@@ -10,13 +10,42 @@ By the end of the lab, all tests in the report should be passing.
 */
 
 const studentInformation = {
-  name: "FILL_IN_YOUR_NAME_HERE",
-  grade: "FILL_IN_YOUR_GRADE_HERE",
-  advisor: "FILL_IN_YOUR_ADVISOR_HERE",
-  major: "FILL_IN_YOUR_MAJOR_HERE",
-  graduationYear: "FILL_IN_YOUR_GRADUATION_YEAR_HERE",
-  imageUrl: "ADD_A_URL_TO_ANY_IMAGE_HERE",
+  name: "Jonathan Ballona Sanchez",
+  grade: "B",
+  advisor: "Luz",
+  major: "Computer Science and Engineering",
+  graduationYear: "2023",
+  imageUrl: "https://media-exp1.licdn.com/dms/image/C5603AQEvrTz90RncRg/profile-displayphoto-shrink_200_200/0/1647308088021?e=1661385600&v=beta&t=sXwqpyDARkua73N5IFKigAd_vaOctjmxuW4jqT9XTK4",
 }
+
+const studentNameGlobal = document.querySelector("#student-name")
+// studentNameGlobal.textContent = studentInformation.name
+
+const studentAdvisorGlobal = document.querySelector("#student-advisor")
+// studentAdvisorGlobal.textContent = studentInformation.advisor
+
+const studentMajorGlobal = document.querySelector("#student-major")
+// studentMajorGlobal.textContent = studentInformation.major
+
+const studentGradeGlobal = document.querySelector("#student-grade-level")
+// studentGradeGlobal.textContent = studentInformation.grade
+
+const studentGradYearGlobal = document.querySelector("#student-graduation-year")
+
+const studentImageGlobal = document.querySelector("#student-image")
+
+
+
+const semesterDropDownGlobal = document.querySelector("#semester-dropdown")
+
+const fallSemDropGlobal = document.querySelector("#fall-semester")
+
+const springSemDropGlobal = document.querySelector("#spring-semester")
+
+const winterTermDropGlobal = document.querySelector("#winter-term")
+
+const reportCardTableGlobal = document.querySelector("#report-card-table")
+
 
 let semester = "Spring Semester"
 
@@ -71,8 +100,19 @@ const dropdownEl = document.querySelector(".dropdown")
  * @param {String} studentName - the name of the student
  */
 function updateStudentName(studentName) {
-  // code goes here
+  // code goes heres
+  // studentNameGlobal.innerHTML.textContent = studentName
+  // studentNameGlobal.innerHTML.textContent = studentName
+  var stuName = studentName
+  studentNameGlobal.innerHTML = stuName
+  // studentNameGlobal.innerHTML = "Jonathan Ballona Sanchez"
+  // studentNameGlobal.innerHTML = stuName
+
+  // console.log(studentNameGlobal.innerHTML)
+
+
 }
+
 
 /**
  * Modify the report card to display the correct grade level from the lookup table above.
@@ -81,6 +121,7 @@ function updateStudentName(studentName) {
  */
 function updateStudentGradeLevel(studentGradeLevel) {
   // code goes here
+  studentGradeGlobal.innerHTML = studentGradeLevel
 }
 
 /**
@@ -90,6 +131,7 @@ function updateStudentGradeLevel(studentGradeLevel) {
  */
 function updateStudentAdvisor(studentAdvisor) {
   // code goes here
+  studentAdvisorGlobal.innerHTML = studentAdvisor
 }
 
 /**
@@ -99,6 +141,7 @@ function updateStudentAdvisor(studentAdvisor) {
  */
 function updateMajor(studentMajor) {
   // code goes here
+  studentMajorGlobal.innerHTML = studentMajor
 }
 
 /**
@@ -108,6 +151,7 @@ function updateMajor(studentMajor) {
  */
 function updateStudentGraduationYear(graduationYear) {
   // code goes here
+  studentGradYearGlobal.innerHTML = graduationYear
 }
 
 /**
@@ -118,12 +162,18 @@ function updateStudentGraduationYear(graduationYear) {
  */
 function updateStudentImage(imageUrl) {
   // code goes here
+  // studentImageGlobal.innerHTML.src = imageUrl
+  // studentImageGlobal.innerHTML.src = imageUrl.url
+  studentImageGlobal.src = imageUrl
+
+
 }
 
 /**
  * This function should run as soon as the page loads and update the correct student info
  */
 function populateStudentInfo(studentInformationObject) {
+  // console.log(studentInformationObject.name)
   updateStudentName(studentInformationObject.name)
   updateStudentGradeLevel(studentInformationObject.grade)
   updateStudentAdvisor(studentInformationObject.advisor)
@@ -271,4 +321,7 @@ function calculateSemesterGpa(reportCardTableElement) {
 
 window.onload = function () {
   // execute your functions here to make sure they run as soon as the page loads
+  populateStudentInfo(studentInformation)
 }
+// populateStudentInfo(studentInformation)
+
